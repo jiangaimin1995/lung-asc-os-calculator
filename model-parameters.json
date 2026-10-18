@@ -1,0 +1,50 @@
+{
+  "modelId": "shandong-lung-asc-cox-307-v1",
+  "disease": "Lung adenosquamous carcinoma",
+  "institution": "Shandong Cancer Hospital",
+  "author": "Aimin Jiang et al.",
+  "cohortSize": 307,
+  "events": 113,
+  "studyPeriod": "2009-2026",
+  "timeUnit": "years",
+  "horizons": [1, 3, 5],
+  "model": "rms::cph, Efron ties; original nomogram specification",
+  "pointWeights": {
+    "age_cat": 100,
+    "pulmonary_metastasis": 68.385144,
+    "liver_metastases": 67.468104,
+    "surgery": 98.938009,
+    "ALB_bin": 72.237066
+  },
+  "adverseLogHazards": {
+    "age_cat": 0.960735139983226,
+    "pulmonary_metastasis": 0.657000109417174,
+    "liver_metastases": 0.648189781484387,
+    "surgery": 0.950532218056945,
+    "ALB_bin": 0.694006877577318
+  },
+  "pointsPerLinearPredictor": 104.086959910456,
+  "referenceSurvival": {
+    "1": 0.974613787085868,
+    "3": 0.895477427874904,
+    "5": 0.84304682138874
+  },
+  "riskCutoff": 171.175075,
+  "riskCutoffDisplay": "171.1751",
+  "riskRule": "Low risk if points <= the original full-precision median; high risk otherwise",
+  "albuminCutoffGL": 40,
+  "referenceProfile": {
+    "age_cat": "<65",
+    "pulmonary_metastasis": "No",
+    "liver_metastases": "No",
+    "surgery": "Yes",
+    "ALB_bin": "Normal"
+  },
+  "precisionNote": "Points use the original formula_rd weights (six decimal places). Survival uses full-precision cph coefficients and baseline survival, not interpolated graph ticks.",
+  "software": {
+    "R": "4.4.2",
+    "rms": "6.9.0",
+    "survival": "3.7.0"
+  },
+  "source": "Reconstructed from the original 307-patient nomogram specification in ASCdata.Rda; no individual patient records exported."
+}
